@@ -61,10 +61,25 @@ console.log(getRandomQuote());
 //created a variable to unutuate the HTML string
 function printQuote(message) {
   var result = getRandomQuote();
-  var message = <>`<p class="quote">${result.quote}</p>`<p class='source'>" + ${result.source} + "</p>`<span class="citation">result.citation</span>`<span class="year">result.year</span></>
-  "</p>";
-  document.getElementById('quote-box').innerHTML = 'message';
+  var message = `<p class="quote">${result.quote}</p>
+    <p class="source">${result.source}</p>
+
+  `;
+
+  if(result.citation !== ''){
+    html += `
+      <span class="citation">${result.citation}</span>
+    `
+  }
+  if(result.year !== ''){
+    html += `
+      <span class = "year">${result.year}</span>
+    `
+
+  }
 }
+  document.getElementById('quote-box').innerHTML = message;
+
 // the user clicks the "Show another quote" button which allows the printQuote function to generate a new quote on the page by calling the function
 
 
@@ -76,4 +91,4 @@ function printQuote(message) {
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('quote-box').addEventListener("click", printQuote, false);
