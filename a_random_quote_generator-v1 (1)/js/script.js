@@ -58,10 +58,10 @@ console.log(getRandomQuote());
  * `printQuote` function
 ***/
 //create a variable that calls the getRandomQuote() function
-//created a variable ti unutuate the HTML string
+//created a variable to unutuate the HTML string
 function printQuote(message) {
   var result = getRandomQuote();
-  var message = <><p class="quote">result.quote</p><p class='source'>" + result.source + "</p><span class="citation">result.citation</span><span class="year">result.year</span></>
+  var message = <>`<p class="quote">${result.quote}</p>`<p class='source'>" + ${result.source} + "</p>`<span class="citation">result.citation</span>`<span class="year">result.year</span></>
   "</p>";
   document.getElementById('quote-box').innerHTML = 'message';
 }
